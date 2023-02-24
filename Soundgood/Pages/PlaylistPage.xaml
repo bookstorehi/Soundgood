@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="Soundgood.Pages.PlaylistPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Soundgood.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <CollectionViewSource x:Name="cvsCompositions" IsSourceGrouped="False"/>
+    </Page.Resources>
+
+    <StackPanel>
+        <StackPanel DataContext="{x:Bind playlist}">
+            <StackPanel HorizontalAlignment="Center">
+                <Image x:Name="previewImg" Width="200" Height="200" Source="/images/image_icon.png"/>
+                <TextBlock Text="{Binding PlaylistData.Title}" HorizontalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="{Binding GetFormattedCountOfCompositions}"/>
+                    <Ellipse Width="3" Height="3" Fill="Black" Margin="5 2 5 0"/>
+                    <TextBlock Text="{Binding GetFormattedDuration}"/>
+                </StackPanel>
+            </StackPanel>
+            <TextBlock Text="{Binding PlaylistData.Description}" HorizontalAlignment="Center" TextWrapping="WrapWholeWords" HorizontalTextAlignment="Center" MaxWidth="400"/>
+        </StackPanel>
+        <ListView x:Name="compsListView" ItemsSource="{Binding Source={StaticResource cvsCompositions}}" IsItemClickEnabled="True" ItemClick="ListView_ItemClick" Margin="0 20">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Data.Name}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
+</Page>
