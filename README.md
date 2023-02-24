@@ -25,7 +25,7 @@ Use-cse:
 ![image](https://user-images.githubusercontent.com/83190740/221214091-2d58d71a-f32f-4242-aee2-54755cdf5cc0.png)
 
 Erd-диаграмма:
-![image](https://user-images.githubusercontent.com/83190740/221214402-0f67b26f-4a3f-417a-913d-6e101fc906c3.png)
+![image](https://user-images.githubusercontent.com/83190740/221216088-7cd57988-39c5-44d5-b58d-322bffbe980d.png)
 
 Архитектура системы:
 ![image](https://user-images.githubusercontent.com/83190740/221214518-4c2d0034-4f31-476d-b7dd-99dcc80d2f05.png)
